@@ -7,7 +7,7 @@ import { AuthService } from './auth.service'
 })
 export class RegisterComponent {
 
-    registerData = {}
+    registerData: any = {}
 
     constructor(public authService: AuthService){}
 

@@ -25,7 +25,7 @@ import { AuthService } from './auth.service'
 })
 export class LoginComponent {
 
-    loginData = {}
+    loginData: any = {}
 
     constructor(public authService: AuthService){}
 
