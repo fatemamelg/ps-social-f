@@ -22,7 +22,7 @@ import { ApiService } from './api.service'
 })
 export class PostComponent {
 
-  constructor(private apiService: ApiService){}
+  constructor(public apiService: ApiService){}
 
   postMsg = ''
   post() {

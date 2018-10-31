@@ -27,7 +27,7 @@ export class LoginComponent {
 
     loginData = {}
 
-    constructor(private authService: AuthService){}
+    constructor(public authService: AuthService){}
 
     post() {
         this.authService.loginUser(this.loginData)

@@ -32,7 +32,7 @@ import { Profile } from 'selenium-webdriver/firefox';
 })
 export class ProfileComponent {
 
-    constructor(private apiService: ApiService, private route: ActivatedRoute){ }
+    constructor(public apiService: ApiService, public route: ActivatedRoute){ }
 
     profile
 

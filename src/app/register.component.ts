@@ -9,7 +9,7 @@ export class RegisterComponent {
 
     registerData = {}
 
-    constructor(private authService: AuthService){}
+    constructor(public authService: AuthService){}
 
     post() {
         console.log(this.registerData)
