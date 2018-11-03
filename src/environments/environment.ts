@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //path: 'http://localhost:3000'
-  path: 'http://ps-social-f.herokuapp.com/'
+  path: 'http://ps-social-f.herokuapp.com'
 };
 
 /*

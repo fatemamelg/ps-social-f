@@ -16,7 +16,8 @@ import { LoginComponent } from './login.component'
 import { UsersComponent } from './users.component'
 import { ProfileComponent } from './profile.component'
 import { PostComponent } from './post.component'
-import { AuthInterceptorService } from './authInterceptor.service'
+import { AuthInterceptorService } from './authInterceptor.service';
+import { MainComponent } from './main/main.component'
 
 
 const routes = [
@@ -35,7 +36,8 @@ const routes = [
     LoginComponent, 
     UsersComponent, 
     ProfileComponent,
-    PostComponent
+    PostComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
