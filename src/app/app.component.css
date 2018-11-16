@@ -1,0 +1,10 @@
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    padding: 10px;
+    color: black;
+}
+
+mat-toolbar{
+    background-color: #F08080; 
+}

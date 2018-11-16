@@ -21,7 +21,7 @@ import { MainComponent } from './main/main.component'
 
 
 const routes = [
-  { path: '', component: PostComponent},
+  { path: '', component: MainComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
