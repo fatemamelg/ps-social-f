@@ -5,7 +5,8 @@
     <mat-card-content>
         <form>
             <mat-form-field>
-                <input [(ngModel)]="registerData.email" name="email" matInput placeholder="email" type="email">
+                <input [(ngModel)]="registerData.email" name="email" matInput placeholder="email" type="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
 
             <mat-form-field>
