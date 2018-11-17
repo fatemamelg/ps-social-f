@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule} from '@angular/material'
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http' 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -46,6 +47,7 @@ const routes = [
     MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [ApiService, AuthService, { 
     provide: HTTP_INTERCEPTORS, 

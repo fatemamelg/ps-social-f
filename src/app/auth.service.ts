@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { environment } from '../environments/environment'
+import { isError } from 'util';
 
 @Injectable()
 export class AuthService {
     messages = []
+    isError = false
     path =  environment.path + '/auth'
 
     TOKEN_KEY = 'token'
@@ -30,9 +32,11 @@ export class AuthService {
     }
 
     loginUser(loginData){
-        this.http.post<any>(this.path + '/login', loginData).subscribe(res => {
-            this.saveToken(res.token)
-        })
+        this.http.post<any>(this.path + '/login', loginData).subscribe(
+            res => {this.saveToken(res.token)},
+            error => {if(error.status == 401)
+                {this.isError = true}}
+        )
     }
 
     saveToken(token) {

@@ -18,9 +18,4 @@ export class RegisterComponent {
         this.authService.registerUser(this.registerData)
     }
 
-    getErrorMessage() {
-        return this.registerData.email.hasError('required') ? 'You must enter a value' :
-            this.registerData.email.hasError('email') ? 'Not a valid email' :
-                '';
-    }
 }

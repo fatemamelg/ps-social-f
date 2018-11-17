@@ -2,14 +2,30 @@ h2 {
     font-family: comic-sans;
     padding: 10px;
 }
+.bg-main{
+    background-image: url('https://c.pxhere.com/photos/54/8c/knitting_handwork_hobby_handmade_wool_color_knit_yarn-537518.jpg!d');
+   height: 700px;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+.dark-overlay{
+    position: absolute;
+    background-size: cover;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background: rgba(0,0,0,0.7);
+color: aliceblue;
+}
+
 
 div{
-    margin: 20px;
+    
     font-size:30px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding:25px 50px 75px;
-    background-image: url('/img/Screenshot\ from\ 2018-09-10\ 23-47-28.png');
-    padding: 20px 50px 60px ;
     text-align: center;
 }
 

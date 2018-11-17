@@ -5,21 +5,23 @@
     <mat-card-content>
         <form>
             <mat-form-field>
-                <input [(ngModel)]="registerData.email" name="email" matInput placeholder="email" type="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
-
-            <mat-form-field>
-                <input [(ngModel)]="registerData.pwd" name="password" matInput placeholder="password" type="password">
+                <input [(ngModel)]="registerData.email" name="email" matInput placeholder="Enter your email" type="email" required>
+                <mat-error *ngIf="">Inform a valid email address.</mat-error>
             </mat-form-field>
             <br />
             <mat-form-field>
-                <input [(ngModel)]="registerData.name" name="name" matInput placeholder="name">
+                <input [(ngModel)]="registerData.pwd" name="Password" matInput placeholder="Password" type="password" required>
+                <mat-error *ngIf="">Password is required.</mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+                <input [(ngModel)]="registerData.name" name="Name" matInput placeholder="name" required>
+                <mat-error *ngIf="">Name is required.</mat-error>
             </mat-form-field>
             <br />
             <br />
             <mat-form-field style="width: 100%">
-                <textarea [(ngModel)]="registerData.description" name="description" matInput placeholder="description"></textarea>
+                <textarea [(ngModel)]="registerData.description" name="Description" matInput placeholder="description"></textarea>
             </mat-form-field>
             <br />
             <button (click)="post()" mat-raised-button color="primary">Register</button>
