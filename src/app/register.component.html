@@ -6,17 +6,14 @@
         <form>
             <mat-form-field>
                 <input [(ngModel)]="registerData.email" name="email" matInput placeholder="Enter your email" type="email" required>
-                <mat-error *ngIf="">Inform a valid email address.</mat-error>
             </mat-form-field>
             <br />
             <mat-form-field>
                 <input [(ngModel)]="registerData.pwd" name="Password" matInput placeholder="Password" type="password" required>
-                <mat-error *ngIf="">Password is required.</mat-error>
             </mat-form-field>
             <br />
             <mat-form-field>
                 <input [(ngModel)]="registerData.name" name="Name" matInput placeholder="name" required>
-                <mat-error *ngIf="">Name is required.</mat-error>
             </mat-form-field>
             <br />
             <br />
@@ -25,6 +22,7 @@
             </mat-form-field>
             <br />
             <button (click)="post()" mat-raised-button color="primary">Register</button>
+            <mat-error *ngIf="authService.isError">This email is already registered</mat-error>
         </form>
     </mat-card-content>
 </mat-card>

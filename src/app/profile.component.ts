@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 import { Profile } from 'selenium-webdriver/firefox';
 
 @Component({
-  selector: 'login',
+  selector: 'profile',
   template: `
     <mat-card>
         <mat-card-header>

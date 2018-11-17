@@ -1,10 +1,10 @@
 h1 {
-    font-family:Brush Script MT, Brush Script Std, cursive;
+    font-family: Brush Script MT, Brush Script Std, cursive;
     font-size: 1.2em;
     padding: 10px;
     color: black;
 }
 
 mat-toolbar{
-    background-color: #de5d83; 
+    background-color: #90beff; 
 }
