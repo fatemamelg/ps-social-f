@@ -1,0 +1,61 @@
+<!--<mat-card>
+    <mat-card-header>
+        <mat-card-title><h4>Profile</h4></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    <mat-list role="list">
+        <mat-list-item role="listitem">Name: {{profile?.name}}</mat-list-item>
+        <mat-list-item role="listitem">Email: {{profile?.email}}</mat-list-item>
+        <mat-list-item role="listitem">Description: {{profile?.description}}</mat-list-item>
+    </mat-list>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title><h4>Posts</h4></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <messages></messages>
+    </mat-card-content>
+</mat-card>-->
+<head>
+    <style>
+        .profile-info {
+            padding: 20px;
+            display: flex;
+        }
+        .pp {
+            border-radius: 50%;
+            background-color: gray;
+        }
+        #name {
+            margin-left: 20px;
+        }
+
+    .posts {
+        margin-bottom: 50px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="profile-info">
+        <img class="pp" src="https://image.flaticon.com/icons/png/128/1217/1217288.png" alt="Avatar"/>
+        <div>
+            <h2 id="name">{{profile?.name}}</h2>
+            <p style="padding: 20px;">{{profile?.description}}</p>
+        </div>
+    </div>
+
+    <br />
+    <div class="contact-info" style="padding: 20px;">
+        <h4 id="name">Contact Information</h4>
+        <p id="email">Email: {{profile?.email}}</p>        
+    </div>
+
+    <div class="posts" style="padding: 20px;">
+        <h4 id="name">Crafts</h4>
+        <messages></messages>  
+    </div>
+</body>

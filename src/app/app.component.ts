@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service'
+import { ApiService } from './api.service'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -18,6 +20,7 @@ import { AuthService } from './auth.service'
 
       <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/register">Register</button>
       <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/login">Login</button>
+      <p *ngIf="authService.isAuthenticated">Welcome {{profile?.name}}</p>
       <button mat-button *ngIf="authService.isAuthenticated" (click)="authService.logout()">Logout</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
@@ -29,9 +32,15 @@ import { AuthService } from './auth.service'
 })
 export class AppComponent {
 
-  constructor(public authService: AuthService){}
+  constructor(public authService: AuthService, public apiService: ApiService, public route: ActivatedRoute){}
 
   title = 'Handmade Store';
 
 
+  profile
+
+  ngOnInit() {
+      var id = this.route.snapshot.params.id
+      this.apiService.getProfile(id).subscribe(data => this.profile = data)
+  }
 }

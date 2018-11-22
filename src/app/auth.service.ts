@@ -10,7 +10,6 @@ import { UsersComponent } from './users.component';
 export class AuthService {
     messages = []
     isError = false
-    errorWithEmail = false
     path =  environment.path + '/auth'
 
     TOKEN_KEY = 'token'
