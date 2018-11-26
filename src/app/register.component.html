@@ -1,28 +1,41 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title><h4>Register New User</h4></mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form>
-            <mat-form-field>
-                <input [(ngModel)]="registerData.email" name="email" matInput placeholder="Enter your email" type="email" required>
-            </mat-form-field>
-            <br />
-            <mat-form-field>
-                <input [(ngModel)]="registerData.pwd" name="Password" matInput placeholder="Password" type="password" required>
-            </mat-form-field>
-            <br />
-            <mat-form-field>
-                <input [(ngModel)]="registerData.name" name="Name" matInput placeholder="name" required>
-            </mat-form-field>
-            <br />
-            <br />
-            <mat-form-field style="width: 100%">
-                <textarea [(ngModel)]="registerData.description" name="Description" matInput placeholder="description"></textarea>
-            </mat-form-field>
-            <br />
-            <button (click)="post()" mat-raised-button color="primary">Register</button>
-            <mat-error *ngIf="authService.isError">This email is already registered</mat-error>
-        </form>
-    </mat-card-content>
-</mat-card>
+<head>
+
+    <style>
+        
+    </style>
+
+</head>
+
+<body>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title><h4>Register New User</h4></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form>
+                <mat-form-field>
+                    <input [(ngModel)]="registerData.email" name="email" matInput placeholder="Enter your email" type="email" required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <input [(ngModel)]="registerData.pwd" name="Password" matInput placeholder="Password" type="password" required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <input [(ngModel)]="registerData.name" name="Name" matInput placeholder="name" required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <input [(ngModel)]="registerData.tele" name="Telephone" matInput placeholder="Telephone">
+                </mat-form-field>
+                <br />
+                <mat-form-field style="width: 100%">
+                    <textarea [(ngModel)]="registerData.description" name="Description" matInput placeholder="description"></textarea>
+                </mat-form-field>
+                <br />
+                <button (click)="post()" mat-raised-button color="primary">Register</button>
+                <mat-error *ngIf="authService.isError">This email is already registered</mat-error>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</body>

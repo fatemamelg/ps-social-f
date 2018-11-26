@@ -5,12 +5,27 @@ import { ActivatedRoute } from '@angular/router'
 @Component({
   selector: 'messages',
   template: `
-    <div *ngFor="let message of apiService.messages">
-      <mat-card>
-        <img src="https://image.flaticon.com/icons/png/128/1217/1217288.png"/>
-        <p>{{message.msg}}</p>
-      </mat-card>
-    </div>
+    <head>
+      <style>
+        mat-card {
+          display: flex;
+        }
+
+        img {
+          margin-right: 10px;
+          width: 30%;
+          height: 20%;
+        }
+      </style>
+    </head>
+    <body>
+      <div *ngFor="let message of apiService.messages">
+        <mat-card>
+          <img src="https://selecthealth.org/-/media/selecthealth/article/author/no-author-image.ashx?mh=600&mw=400"/>
+          <p>{{message.msg}}</p>
+        </mat-card>
+      </div>
+    </body>
     `
 })
 export class MessagesComponent {

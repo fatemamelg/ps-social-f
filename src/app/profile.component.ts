@@ -7,6 +7,7 @@ import { Profile } from 'selenium-webdriver/firefox';
   selector: 'profile',
   templateUrl: 'profile.component.html'
 })
+
 export class ProfileComponent {
 
     constructor(public apiService: ApiService, public route: ActivatedRoute){ }

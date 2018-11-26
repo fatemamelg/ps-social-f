@@ -21,21 +21,26 @@
 </mat-card>-->
 <head>
     <style>
+        body {
+            background-color: transparent;
+        }
         .profile-info {
             padding: 20px;
             display: flex;
         }
         .pp {
             border-radius: 50%;
-            background-color: gray;
+            border: solid black 2px;
+            
         }
         #name {
             margin-left: 20px;
         }
 
-    .posts {
-        margin-bottom: 50px;
-    }
+        .posts {
+            margin-bottom: 50px;
+        }
+
     </style>
 </head>
 
@@ -51,7 +56,8 @@
     <br />
     <div class="contact-info" style="padding: 20px;">
         <h4 id="name">Contact Information</h4>
-        <p id="email">Email: {{profile?.email}}</p>        
+        <p id="email">Email: {{profile?.email}}</p>
+        <p id="email">Tele: {{profile?.tele}}</p>      
     </div>
 
     <div class="posts" style="padding: 20px;">

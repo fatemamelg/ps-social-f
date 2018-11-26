@@ -6,5 +6,6 @@ h1 {
 }
 
 mat-toolbar{
-    background-color: #90beff; 
+    background-color: black; 
+    color: white;
 }

@@ -1,0 +1,42 @@
+<head>
+    <link type="stylesheet/css" src="app.component.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <style>
+        p {
+            margin-top: 15px;
+        }
+
+        .category {
+            border-radius: 10%;
+            background-color: white;
+            margin: 15px;
+        }
+
+        .btn-toolbar {
+            background-color: white;
+            padding-left: 35%;
+        }
+    </style>
+    </head>
+    <body>
+    <mat-toolbar>
+        <h1 style="font-family: Brush Script MT, Brush Script Std, cursive">Handmade Store</h1>
+        
+        <!--<button mat-button routerLink="/users">Users</button>-->
+        <span style="flex: 1 1 auto"></span>
+        <button mat-button routerLink="/">Home</button>
+
+        <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/register">Register</button>
+        <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/login">Login</button>
+        <button mat-button *ngIf="authService.isAuthenticated" >Profile</button>
+        <button mat-button *ngIf="authService.isAuthenticated" (click)="authService.logout()">Logout</button>
+    </mat-toolbar>
+    <br />
+    <mat-toolbar class="btn-toolbar">
+        <button type="button" class="category">Accessories</button>
+        <button type="button" class="category">Crochet</button>
+        <button type="button" class="category">String Art</button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    </body>

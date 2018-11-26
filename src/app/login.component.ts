@@ -6,26 +6,36 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'login',
   template: `
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title><h4>Login</h4></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form>
-                <mat-form-field>
-                    <input [(ngModel)]="loginData.email" name="Email" matInput placeholder="email" type="email">
-                </mat-form-field>
-                <br />
-                <mat-form-field>
-                    <input [(ngModel)]="loginData.pwd" name="Password" matInput placeholder="password" type="password">
-                </mat-form-field>
-                <br />
-                <button (click)="post()" mat-raised-button color="primary">Login</button>
-                <br />
-                <mat-error *ngIf="authService.isError">Email or Password invalid</mat-error>
-            </form>
-        </mat-card-content>
-    </mat-card>
+
+  <head>
+    <style>
+        body, h4 {
+            text-align: center;
+        }
+    </style>
+    </head>
+    <body>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title><h4>Login</h4></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form>
+                    <mat-form-field>
+                        <input [(ngModel)]="loginData.email" name="Email" matInput placeholder="email" type="email">
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field>
+                        <input [(ngModel)]="loginData.pwd" name="Password" matInput placeholder="password" type="password">
+                    </mat-form-field>
+                    <br />
+                    <button (click)="post()" mat-raised-button color="primary">Login</button>
+                    <br />
+                    <mat-error *ngIf="authService.isError">Email or Password invalid</mat-error>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </body>
   `
 })
 export class LoginComponent {
