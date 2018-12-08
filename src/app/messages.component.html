@@ -1,0 +1,44 @@
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        mat-card {
+            display: flex;
+            width: 30px;
+            height: 30px;
+        }
+
+        img {
+            margin-right: 10px;
+            
+            background-image: url('https://cdn1-www.dogtime.com/assets/uploads/2010/12/puppies.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <!--<div *ngFor="let message of apiService.messages">
+          <mat-card>
+            <img src="https://selecthealth.org/-/media/selecthealth/article/author/no-author-image.ashx?mh=600&mw=400"/>
+            <p>{{message.msg}}</p>
+          </mat-card>
+        </div>-->
+
+    <div *ngFor="let message of apiService.messages" class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="{{message.img}}">
+                <div class="card-body">
+                    <p>{{message.msg}}</p>
+                    <h6>{{message.price}} L.E</h6>
+                    <p>Category: {{message.tag}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

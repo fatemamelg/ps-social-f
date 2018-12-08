@@ -26,6 +26,19 @@
                 </mat-form-field>
                 <br />
                 <mat-form-field>
+                    <input [(ngModel)]="registerData.img" name="Picture" matInput placeholder="Picture Link">
+                </mat-form-field>
+                <br />
+                <p>OR:</p>
+                <br />
+                <form action="/action_page.php">
+                    <input type="file" name="pic" accept="image/*">
+                    <input type="submit">
+                </form>
+                <br />
+                <img src='http://localhost:3000/upload/[filename]'/>
+                <br />
+                <mat-form-field>
                     <input [(ngModel)]="registerData.tele" name="Telephone" matInput placeholder="Telephone">
                 </mat-form-field>
                 <br />

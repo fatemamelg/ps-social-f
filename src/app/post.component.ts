@@ -3,30 +3,19 @@ import { ApiService } from './api.service'
 
 @Component({
   selector: 'post',
-  template: `
-  <mat-card>
-  <mat-card-header>
-      <mat-card-title><h4>New Post</h4></mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-      <form>
-          <mat-form-field style="width: 100%">
-              <textarea [(ngModel)]="postMsg" name="description" matInput placeholder="Post Message"></textarea>
-          </mat-form-field>
-          <br />
-          <button (click)="post()" mat-raised-button color="primary">Post</button>
-      </form>
-  </mat-card-content>
-</mat-card>
-    `
+  templateUrl: './post.component.html'
 })
 export class PostComponent {
 
   constructor(public apiService: ApiService){}
 
+  selected = '';
+  postData: any = {}
+
   postMsg = ''
   post() {
-      this.apiService.postMessage({msg: this.postMsg})
+      this.postData.tag = this.selected
+      this.apiService.postMessage(this.postData)
   }
 
 }

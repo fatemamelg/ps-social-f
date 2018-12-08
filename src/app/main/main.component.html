@@ -1,14 +1,26 @@
 <head>
   <link type="stylesheet/css" src="main.component.css" />
-  
+
   <link type="stylesheet/css" src="/../styles.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <!-- Custom fonts for this template -->
+  <link href="./../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <style>
+    .masthead {
+      background-image: url('./../../assets/imgs/header-bg.jpg');
+      overflow: hidden;
+    }
   </style>
 </head>
 
-<body  style="overflow:hidden;">
+<body style="overflow:hidden;">
 
 
   <div id="carouselExampleControls" class="carousel slide p-0 m-5" data-ride="carousel" style="color: bisque">
@@ -33,28 +45,34 @@
     </a>
   </div>
   
-   <div class="row bg-main ">
+   <!-- <div class="row bg-main ">
     <div class=" dark-overlay">
       <div class="align-items-center pt-5">
       <div id='about-us' > 
         <h1>About us</h1>
         <p>A website for trading handmade crafts.</p>
       </div> 
-    </div> 
-
-    </div> 
-
-    <!-- <div class="col-lg-4 col-10 pr-0 mr-0" style="overflow: hidden;">
-    <img class="rounded d-block" style="height:500px; width: auto;"  src="https://c.pxhere.com/photos/54/8c/knitting_handwork_hobby_handmade_wool_color_knit_yarn-537518.jpg!d" alt="this is a photo">
-      
-    </div> -->
-  </div>
-
-  <section class="login-register">
-    <div class="register">
-        <h4>New here?</h4>
-        <register></register>
     </div>  
+
+    </div> 
+
+  </div> -->
+  <!-- Header -->
+  <section class="masthead">
+    <div class="container">
+      <div class="intro-text" style="color: white;">
+        <div class="intro-lead-in">Welcome To Our Store!</div>
+        <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">get our products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-register" *ngIf="!authService.isAuthenticated">
+    <div class="register">
+      <h4>New here?</h4>
+      <register></register>
+    </div>
   </section>
 
 </body>

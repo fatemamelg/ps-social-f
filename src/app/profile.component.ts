@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service'
+import { AuthService } from './auth.service'
 import { ActivatedRoute } from '@angular/router'
 import { Profile } from 'selenium-webdriver/firefox';
 
@@ -18,5 +19,7 @@ export class ProfileComponent {
         var id = this.route.snapshot.params.id
         this.apiService.getProfile(id).subscribe(data => this.profile = data)
     }
+
+    //uploadPhoto(){}
 
 }

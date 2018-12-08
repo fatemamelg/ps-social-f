@@ -6,8 +6,10 @@ import { environment } from '../environments/environment'
 
 export class ApiService {
 
+    allMessages = []
     messages = []
     users = []
+    categories = []
     path = environment.path
     constructor(public http: HttpClient) {}
 
@@ -17,14 +19,31 @@ export class ApiService {
         })
     }
 
-    postMessage(message){
-        this.http.post(this.path + '/posts', message).subscribe(res => {
+    getAllMessages(){
+        this.http.get<any>(this.path + '/posts/').subscribe(res => {
+            this.allMessages = res
+        })
+    }
+
+    postMessage(postData){
+        this.http.post<any>(this.path + '/posts', postData).subscribe(res => {
         })
     }
 
     getUsers(){
         this.http.get<any>(this.path + '/users').subscribe(res => {
             this.users = res
+        })
+    }
+
+    getCategories(id){
+        this.http.get<any>(this.path + '/categories' + id).subscribe(res => {
+            this.users = res
+        })
+    }
+
+    postCategory(postCat){
+        this.http.post<any>(this.path + '/categories', postCat).subscribe(res => {
         })
     }
 

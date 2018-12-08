@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule} from '@angular/material'
+import {MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatTabsModule,
+        MatListModule, MatSelectModule, MatOptionModule} from '@angular/material'
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http' 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -19,6 +20,10 @@ import { ProfileComponent } from './profile.component'
 import { PostComponent } from './post.component'
 import { AuthInterceptorService } from './authInterceptor.service';
 import { MainComponent } from './main/main.component'
+import { NewsfeedsComponent } from './newsfeeds.component'
+import { AccessoriesComponent } from './accessories.component'
+import { CategoryComponent } from './category.component'
+import { AddCategoryComponent } from './addCategory.component'
 
 
 const routes = [
@@ -26,7 +31,12 @@ const routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
   { path: 'users', component: UsersComponent},
-  { path: 'profile/:id', component: ProfileComponent}
+  { path: 'profile/:id', component: ProfileComponent},
+  { path:'newsfeed', component: NewsfeedsComponent },
+  { path: 'accessories', component: AccessoriesComponent },
+  { path: 'post', component: PostComponent},
+  { path: 'category/:id', component: CategoryComponent },
+  { path: 'addcategory', component: AddCategoryComponent },
 ]
 
 @NgModule({
@@ -38,13 +48,18 @@ const routes = [
     UsersComponent, 
     ProfileComponent,
     PostComponent,
-    MainComponent
+    MainComponent,
+    NewsfeedsComponent, AccessoriesComponent, 
+    CategoryComponent, AddCategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, FormsModule,
-    MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule,
+
+    MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule, 
+    MatTabsModule, MatSelectModule, MatOptionModule,
+
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     NgbModule
