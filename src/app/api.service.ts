@@ -36,9 +36,9 @@ export class ApiService {
         })
     }
 
-    getCategories(id){
-        this.http.get<any>(this.path + '/categories' + id).subscribe(res => {
-            this.users = res
+    getCategories(catId){
+        this.http.get<any>(this.path + '/categories' + catId).subscribe(res => {
+            this.messages = res
         })
     }
 

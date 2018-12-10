@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http' 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+//import the ng2-file-upload directive so we can add it to our declarations.
+import { FileSelectDirective } from 'ng2-file-upload';
+
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { ApiService } from './api.service'
@@ -50,7 +53,8 @@ const routes = [
     PostComponent,
     MainComponent,
     NewsfeedsComponent, AccessoriesComponent, 
-    CategoryComponent, AddCategoryComponent
+    CategoryComponent, AddCategoryComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <head>
 
     <style>
-        
+
     </style>
 
 </head>
@@ -9,16 +9,20 @@
 <body>
     <mat-card>
         <mat-card-header>
-            <mat-card-title><h4>Register New User</h4></mat-card-title>
+            <mat-card-title>
+                <h4>Register New User</h4>
+            </mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <form>
                 <mat-form-field>
-                    <input [(ngModel)]="registerData.email" name="email" matInput placeholder="Enter your email" type="email" required>
+                    <input [(ngModel)]="registerData.email" name="email" matInput placeholder="Enter your email" type="email"
+                        required>
                 </mat-form-field>
                 <br />
                 <mat-form-field>
-                    <input [(ngModel)]="registerData.pwd" name="Password" matInput placeholder="Password" type="password" required>
+                    <input [(ngModel)]="registerData.pwd" name="Password" matInput placeholder="Password" type="password"
+                        required>
                 </mat-form-field>
                 <br />
                 <mat-form-field>
@@ -31,12 +35,13 @@
                 <br />
                 <p>OR:</p>
                 <br />
-                <form action="/action_page.php">
-                    <input type="file" name="pic" accept="image/*">
-                    <input type="submit">
-                </form>
+                <!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
+                <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+                <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                    Upload
+                </button>
                 <br />
-                <img src='http://localhost:3000/upload/[filename]'/>
+                
                 <br />
                 <mat-form-field>
                     <input [(ngModel)]="registerData.tele" name="Telephone" matInput placeholder="Telephone">
