@@ -4,8 +4,9 @@ import { FormsModule, Validators } from '@angular/forms'
 import { HttpErrorResponse } from '@angular/common/http'
 import {  FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { Router } from '@angular/router'
+import { Http, Response } from '@angular/http';
 
-const URL = 'http://localhost:3000/uploads';
+const URL = 'http://localhost:3000/uploads/';
 
 
 @Component({
@@ -14,12 +15,13 @@ const URL = 'http://localhost:3000/uploads';
 })
 export class RegisterComponent {
 
-    registerData: any = {}
+    registerData: any = {filename: String}
     //declare a property called fileuploader and assign it to an instance of a new fileUploader.
     //pass in the Url to be uploaded to, and pass the itemAlais, which would be the name of the //file input when sending the post request.
     public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
     
 
+    image
     constructor(public authService: AuthService, public router: Router){}
 
     ngOnInit() {
@@ -28,9 +30,14 @@ export class RegisterComponent {
         //overide the onCompleteItem property of the uploader so we are 
         //able to deal with the server response.
         this.uploader.onCompleteItem = (item:any, response:any, status:any, headers:any) => {
-             console.log("ImageUpload:uploaded:", item, status, response);
+            this.image = response
+            this.image = this.image.slice(15)
+            this.registerData.filename = this.image
+            console.log(this.image, this.registerData.filename)
+            console.log("ImageUpload:uploaded:", item, status, response);
          };
-     }
+    }
+    
 
     post() {
         console.log(this.registerData)

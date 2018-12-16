@@ -44,18 +44,30 @@
   
     <h4>Latest crafts</h4>
   
-    <div *ngFor="let message of apiService.allMessages" class="row posts">
-      <div class="col-sm-6">
-        <div class="card">
-          <img class="card-img-top" src="{{message.img}}">
-          <div class="card-body">
-            <p>{{message.msg}}</p>
-            <h6>{{message.price}} L.E</h6>
-            <p>Category: {{message.tag}}</p>
-          </div>
+    <div class="alert alert-success" role ="alert">
+    <h4>Latest Crafts</h4>
+  </div>
+
+  <div *ngFor="let message of apiService.categories" class="container d-flex align-items-start flex-column bd-highlight alert alert-success" role ="alert" ng-repeat="filter: search-text">
+    <!-- <div class="col-sm-7"> -->
+      <div class="mb-3">
+        <div class="row">
+         <div class="col-sm">
+
+         <div class ="card">
+         
+        <img class="card-img-top" src="{{message.img}}">
         </div>
+         </div>
+
+        <div class="col-sm-7">
+          <p>{{message.msg}}</p>
+          <h6>{{message.price}} L.E</h6>
+        </div>
+
       </div>
     </div>
+  </div>
   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -5,11 +5,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <style>
-    .posts {
-      margin-left: 30%;
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -42,17 +38,36 @@
 
   </header>
 
-  <h4>Latest crafts</h4>
+  <div class="input-group mb-3">
+  <input [(ngModel)]="term" placeholder="Search" [ngModelOptions]= "{standolone: ture}">
+  <span class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Search</button>
+  </span>
+  </div>
+  <p>{{term}}</p>
 
-  <div *ngFor="let message of apiService.allMessages" class="row posts">
-    <div class="col-sm-7">
-      <div class="card">
+
+  <div class="alert alert-success" role ="alert">
+    <h4>Latest Crafts</h4>
+  </div>
+
+  <div *ngFor="let message of apiService.allMessages | filter:term" class="container d-flex align-items-start flex-column bd-highlight alert alert-success" role ="alert" ng-repeat="filter: search-text">
+    <!-- <div class="col-sm-7"> -->
+      <div class="mb-3">
+        <div class="row">
+         <div class="col-sm">
+
+         <div class ="card">
+         
         <img class="card-img-top" src="{{message.img}}">
-        <div class="card-body">
+        </div>
+         </div>
+
+        <div class="col-sm-7">
           <p>{{message.msg}}</p>
           <h6>{{message.price}} L.E</h6>
-          <p>Category: {{message.tag}}</p>
         </div>
+
       </div>
     </div>
   </div>

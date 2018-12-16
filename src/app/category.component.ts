@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service'
+import { ApiService } from './api.service'
 import { HttpErrorResponse } from '@angular/common/http'
 import { Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
+
 
 @Component({
   selector: 'category',
@@ -9,20 +11,15 @@ import { Router } from '@angular/router'
 })
 export class CategoryComponent {
 
-    loginData: any = {}
 
-    constructor(public authService: AuthService, public router: Router){
-    }
+    constructor(public apiService: ApiService, public router: Router, public route: ActivatedRoute){ }
 
-    post() {
-        this.authService.loginUser(this.loginData).subscribe(
-            res => {
-                this.authService.saveToken(res.token)
-            },
-            error => {
-                if(error.status == 401) this.authService.isError = true
-            }
-        )
+    category
+
+    ngOnInit() {
+        var id = this.route.snapshot.params.id
+        this.apiService.getCategoryMessages(id)
     }
+    
 }
 

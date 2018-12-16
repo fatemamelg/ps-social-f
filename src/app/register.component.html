@@ -36,7 +36,7 @@
                 <p>OR:</p>
                 <br />
                 <!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
-                <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+                <input type="file" [(ngModel)]="registerData.img" name="photo" ng2FileSelect [uploader]="uploader" />
                 <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
                     Upload
                 </button>

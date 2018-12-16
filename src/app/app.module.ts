@@ -24,9 +24,9 @@ import { PostComponent } from './post.component'
 import { AuthInterceptorService } from './authInterceptor.service';
 import { MainComponent } from './main/main.component'
 import { NewsfeedsComponent } from './newsfeeds.component'
-import { AccessoriesComponent } from './accessories.component'
 import { CategoryComponent } from './category.component'
-import { AddCategoryComponent } from './addCategory.component'
+import { AddCategoryComponent } from './addCategory.component';
+import { FilterPipe } from './filter.pipe'
 
 
 const routes = [
@@ -36,9 +36,8 @@ const routes = [
   { path: 'users', component: UsersComponent},
   { path: 'profile/:id', component: ProfileComponent},
   { path:'newsfeed', component: NewsfeedsComponent },
-  { path: 'accessories', component: AccessoriesComponent },
   { path: 'post', component: PostComponent},
-  { path: 'category/:id', component: CategoryComponent },
+  { path: 'categories/:id', component: CategoryComponent },
   { path: 'addcategory', component: AddCategoryComponent },
 ]
 
@@ -52,9 +51,10 @@ const routes = [
     ProfileComponent,
     PostComponent,
     MainComponent,
-    NewsfeedsComponent, AccessoriesComponent, 
+    NewsfeedsComponent,
     CategoryComponent, AddCategoryComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -36,9 +36,13 @@ export class ApiService {
         })
     }
 
-    getCategories(catId){
-        this.http.get<any>(this.path + '/categories' + catId).subscribe(res => {
-            this.messages = res
+    getCategories(categoryId){
+        return this.http.get(this.path + '/categories/' + categoryId)
+    }
+
+    getCategoryMessages(categoryId){
+        this.http.get<any>(this.path + '/postC/' + categoryId).subscribe(res => {
+            this.categories = res
         })
     }
 
@@ -46,6 +50,7 @@ export class ApiService {
         this.http.post<any>(this.path + '/categories', postCat).subscribe(res => {
         })
     }
+
 
     getProfile(id){
         return this.http.get(this.path + '/profile/' + id)

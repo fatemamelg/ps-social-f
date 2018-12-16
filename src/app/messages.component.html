@@ -7,9 +7,13 @@
 
     <style>
         mat-card {
-            display: flex;
             width: 30px;
             height: 30px;
+        }
+
+        .card{
+            padding: 20px;
+            display: flex;
         }
 
         img {
@@ -31,7 +35,7 @@
     <div *ngFor="let message of apiService.messages" class="row">
         <div class="col-sm-6">
             <div class="card">
-                <img class="card-img-top" src="{{message.img}}">
+                <div><img class="card-img-top" src="{{message.img}}"></div>
                 <div class="card-body">
                     <p>{{message.msg}}</p>
                     <h6>{{message.price}} L.E</h6>

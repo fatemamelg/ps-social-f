@@ -27,12 +27,9 @@
 
         .btn-toolbar {
             background-color: white;
-            padding-left: 35%;
+            padding-left: 30%;
         }
 
-        mat-toolbar {
-            padding: 40px;  
-        }
 
     </style>
     </head>
@@ -42,18 +39,21 @@
         
         <!--<button mat-button routerLink="/users">Users</button>-->
         <span style="flex: 1 1 auto"></span>
-        <button mat-button routerLink="/newsfeed">Home</button>
 
+        <button mat-button routerLink="/newsfeed">Home</button>
         <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/register">Register</button>
         <button mat-button *ngIf="!authService.isAuthenticated" routerLink="/login">Login</button>
         <button mat-button *ngIf="authService.isAuthenticated" routerLink="/post">Post</button>
         <button mat-button *ngIf="authService.isAuthenticated" (click)="authService.logout()">Logout</button>
     </mat-toolbar>
     <br />
+
+    <div class="alert alert-success" role="alert">
     <mat-toolbar class="btn-toolbar">
-        <button type="button" class="category" routerLink="/accessories">Accessories</button>
-        <button type="button" class="category" routerLink="/crochet">Crochet</button>
-        <button type="button" class="category">String Art</button>
+        <button type="button" class="category btn btn-outline-info" routerLink="/categories/5c0ac3e1d2967a4152ef4fcb">Accessories</button>
+        <button type="button" class="category btn btn-outline-info" routerLink="/categories/5c0ac394d2967a4152ef4fca">Crochet</button>
+        <button type="button" class="category btn btn-outline-info" routerLink="/categories/5c0ac3f6d2967a4152ef4fcc">String Art</button>
     </mat-toolbar>
+</div>
     <router-outlet></router-outlet>
 </body>

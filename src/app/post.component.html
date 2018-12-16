@@ -13,7 +13,7 @@
         <mat-card-content>
             <form>
                 <mat-form-field style="width: 100%">
-                    <textarea [(ngModel)]="postData.msg" name="description" matInput placeholder="Post"></textarea>
+                    <textarea [(ngModel)]="postData.msg" name="Description" matInput placeholder="Post"></textarea>
                 </mat-form-field>
                 <br />
                 <mat-form-field style="width: 100%">
@@ -21,14 +21,13 @@
                 </mat-form-field>
                 <br />
                 <mat-form-field>
-                    <mat-select [(value)]="selected" [(ngModel)]="postData.tag">
-                        <mat-option>None</mat-option>
-                        <mat-option value="accessories">Accessories</mat-option>
-                        <mat-option value="crochet">Crochet</mat-option>
-                        <mat-option value="stringart">String Art</mat-option>
+                    <mat-select [(value)]="selected" [(ngModel)]="postData.tag" [ngModelOptions]="{standalone: true}">
+                        <!-- <mat-option *ngFor="let cat of apiService.categories"  (click)="loadIdValueInForm(apiService.categories.categoryId)" value="cat.name">{{cat.name}}</mat-option> -->
+                        <mat-option value="5c0ac394d2967a4152ef4fca">Crochet</mat-option>
+                        <mat-option value="5c0ac3e1d2967a4152ef4fcb">Accessories</mat-option>
+                        <mat-option value="5c0ac3f6d2967a4152ef4fcc">String Art</mat-option>
                     </mat-select>
                 </mat-form-field>    
-                <p>You selected: {{selected}}</p>
                 <br />
                 <mat-form-field>
                     <input [(ngModel)]="postData.price" name="Picture" matInput placeholder="Price" required>

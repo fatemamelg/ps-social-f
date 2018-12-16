@@ -12,9 +12,8 @@ export class PostComponent {
   selected = '';
   postData: any = {}
 
-  postMsg = ''
   post() {
-      this.postData.tag = this.selected
+      this.postData.tagName = this.selected
       this.apiService.postMessage(this.postData)
   }
 

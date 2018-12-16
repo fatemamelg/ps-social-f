@@ -20,6 +20,5 @@ export class ProfileComponent {
         this.apiService.getProfile(id).subscribe(data => this.profile = data)
     }
 
-    //uploadPhoto(){}
 
 }
